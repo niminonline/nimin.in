@@ -247,7 +247,7 @@ function handleNameChange(){
  
   if (!name.match(/\b^[A-Za-z \.]+$\b/) )
   {
-    document.getElementById("name-error").innerText = ("Invalid");
+    document.getElementById("name-error").innerText = ("Enter a valid name");
     namevalid=false;
   }
   else
@@ -262,7 +262,7 @@ function handleEmailChange()
 var mailregex = /\b^[^ ][a-z.\-_0-9]+@[a-z0-9]+\.[a-z]{2,3}\b/;
 if(!(document.getElementById("email").value).match(mailregex))
 {
-  document.getElementById("email-error").innerText= ("Invalid");
+  document.getElementById("email-error").innerText= ("Enter a valid email id");
   emailvalid =false;
 }
 else
