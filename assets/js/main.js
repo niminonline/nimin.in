@@ -232,3 +232,95 @@
   new PureCounter();
 
 })()
+
+
+function handleClick(){
+
+var name= document.getElementById("name");
+console.log(name.value);
+var email= document.getElementById("email");
+console.log(email.value);
+var subject= document.getElementById("subject");
+console.log(subject.value);
+var message= document.getElementById("message");
+console.log(message.value);
+} 
+function handleNameChange(){
+  var name= document.getElementById("name").value;
+  console.log(name);
+  var nameval=false, emailval=false;
+ 
+  if (!name.match(/\b^[A-Za-z \.]+$\b/) )
+  {
+    document.getElementById("name-error").innerText = ("Invalid");
+    return false;
+  }
+  else
+  document.getElementById("name-error").innerText= ("valid");
+  return true;
+
+}
+
+function handleNull(val)
+{
+  if(val.value="")
+  {
+  
+  if(val=="subject"){
+
+    document.getElementById("subject-error").innerText= ("*Enter Something");
+  }
+  else 
+  document.getElementById("message-error").innerText= ("*Enter Something");
+  }
+
+}
+
+function handleEmailChange()
+{
+var mailregex = /\b^[^ ][a-z.\-_0-9]+@[a-z0-9]+\.[a-z]{2,3}\b/;
+if(!(document.getElementById("email").value).match(mailregex))
+{
+  document.getElementById("email-error").innerText= ("Invalid");
+return flase;
+}
+else
+{
+  document.getElementById("email-error").innerText= ("valid");
+
+return true;
+}
+}
+
+
+
+
+
+
+
+
+function sendEmail() {
+  event.preventDefault();
+
+
+
+var templateParams = {
+ name: document.getElementById("name").value,
+ email: document.getElementById("email").value,
+ subject: document.getElementById("subject").value,
+ message: document.getElementById("message").value
+  
+};
+
+
+  emailjs.send('service_oigf56j', 'template_sa2p2oi', templateParams)
+  .then(function(response) {
+    alert("mail successfully sent")
+     console.log('SUCCESS!', response.status, response.text);
+     window.location.reload();
+  }, function(error) {
+    alert("mail sending failed")
+     console.log('FAILED...', error);
+  });
+  
+}
