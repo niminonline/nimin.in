@@ -1648,7 +1648,9 @@ a:hover {
 
 
 .red-text{
-color:red;
+  margin-top: 5px;
+color:rgb(255, 71, 71);
+font-size: .7rem;
 }
 
 

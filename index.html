@@ -447,37 +447,50 @@
                         <div class="row">
                           <div class="col-md-12 mb-3">
                             <div class="form-group">
-                              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" onchange="handleNameChange()">
+                              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" oninput="handleNameChange()">
                               <p class="hidden-content red-text" id="name-error"></p>
                             </div>
                           </div>
                           <div class="col-md-12 mb-3">
                             <div class="form-group">
-                              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" onchange="handleEmailChange()"  >
+                              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" oninput="handleEmailChange()"  >
                               <p class="hidden-content red-text" id="email-error" value=""></p>
                             </div>
                           </div>
+
+
                           <div class="col-md-12 mb-3">
                             <div class="form-group">
-                              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" onchange="handleNull(subject)" >
+                              <input type="text" name="phone" class="form-control" id="phone" placeholder="Your phone number" oninput="handlePhoneChange()">
+                              <p class="hidden-content red-text" id="phone-error"></p>
+                            </div>
+                          </div>
+
+
+
+                          <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" oninput="handleNull(this)" >
                               <p class="hidden-content red-text" id="subject-error"  value=""></p>
                             </div>
                           </div>
+
+
                           <div class="col-md-12"> 
                             <div class="form-group">
-                              <textarea class="form-control" name="message" rows="5" placeholder="Message" id="message" onchange="handleNull(message)">
-                              </textarea>
+                              <textarea class="form-control" name="message" id="message"  rows="3" placeholder="Message" oninput="handleNull(this)"></textarea>
                               <p class="hidden-content red-text" id="message-error"  value=""></p>
                             </div>
                           </div>
+                          
+
                           <div class="col-md-12 text-center my-3">
                             <div class="loading">Loading</div>
                             <div class="error-message"></div>
                             <div class="sent-message">Your message has been sent. Thank you!</div>
                           </div>
                           <div class="col-md-12 text-center">
-                            <!-- <input type="submit" class="button button-a button-big button-rouded" value="ok">  -->
-                            <button type="submit" class="button button-a button-big button-rouded" onclick="sendEmail()">Send Message</button>
+                           <button type="submit" class="button button-a button-big button-rouded" onclick="sendEmail()">Send Message</button>
                           
                           </div>
                         </div>
