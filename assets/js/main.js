@@ -235,7 +235,7 @@
 
 
 
-
+// ===============email validation==============
 
 var namevalid=false, emailvalid=false,phonevalid=false,subjectvalid=false,messagevalid=false;
 
